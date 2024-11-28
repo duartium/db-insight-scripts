@@ -8,6 +8,8 @@ FROM
     sys.procedures
 WHERE 
     SCHEMA_NAME(schema_id) NOT IN ('sys', 'INFORMATION_SCHEMA')
+    AND name NOT LIKE 'sp_%diagram%' 
+    AND name NOT IN ('SP_CREAR_VSE_SDT1')
 ORDER BY 
     [Schema], 
     [ProcedureName];
